@@ -18,10 +18,26 @@ namespace App1
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.activity_main);
 
             if(posts == null) TestPosts();
 
             ListAdapter = new PostAdapter(this, posts);
+            FindViewById<Button>(Resource.Id.addPost).Click += AddPostButton;
+        }
+
+        private void AddPostButton(object sender, EventArgs e)
+        {
+            EditText editText = FindViewById<EditText>(Resource.Id.content);
+
+            posts.Add(new SocialPost
+            {
+                Name = "Tester",
+                Message = editText.Text,
+                Likes = 0,
+                Date = DateTimeOffset.Now,
+                Comments = new List<Comment>()
+            });
         }
 
         public void TestPosts()

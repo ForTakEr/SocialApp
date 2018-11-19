@@ -4,17 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-	<EditText
-		android:layout_width="334.0dp"
-		android:layout_height="wrap_content"
+	<LinearLayout
+		android:orientation="vertical"
 		android:minWidth="25px"
 		android:minHeight="25px"
-		android:id="@+id/SubmitPostText"
-		android:layout_marginLeft="85dp"/>
-	<Button
-		android:text="Submit"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/SubmitPostText"
-		android:id="@+id/SubmitPost" />
+		android:layout_height="match_parent"
+		android:id="@+id/linearLayout2" >
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout1" >
+			<android.support.design.widget.TextInputEditText
+				android:layout_width="fill_parent"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:id="@+id/content" />
+			<Button
+				android:text="Lisa postitus"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_toRightOf="@id/linearLayout1"
+				android:id="@+id/addPost" />
+		</LinearLayout>
+		<ListView android:id="@android:id/list"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"/>
+	</LinearLayout>
 </RelativeLayout>
