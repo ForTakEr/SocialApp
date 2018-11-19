@@ -58,13 +58,13 @@ namespace App1
             view.FindViewById<TextView>(Resource.Id.likes).Text = items[position].Likes.ToString() + " Likes";
             view.FindViewById<TextView>(Resource.Id.comments).Text = items[position].Comments.Count() + " Comments";
 
-            view.FindViewById<TextView>(Resource.Id.comments).Click += (sender, e) => // CustomAdapter_Comments(position);
+            view.FindViewById<TextView>(Resource.Id.comments).Click += (sender, e) =>
             {
                 Intent commentsActivity = new Intent(context, typeof(CommentActivity));
                 commentsActivity.PutExtra("Comments", JsonConvert.SerializeObject(items[position].Comments));
                 context.StartActivity(commentsActivity);
             };
-            view.FindViewById<TextView>(Resource.Id.likes).Click += (sender, e) => // CustomAdapter_Likes(position);
+            view.FindViewById<TextView>(Resource.Id.likes).Click += (sender, e) =>
             {
                 if (!items[position].IsLiked) items[position].Likes++;
                 else items[position].Likes--;
@@ -78,24 +78,5 @@ namespace App1
 
             return view;
         }
-
-        //public void CustomAdapter_Likes(int position)
-        //{
-        //    if (!MainActivity.posts[position].IsLiked) MainActivity.posts[position].Likes++;
-        //    else  MainActivity.posts[position].Likes--;
-        //    MainActivity.posts[position].IsLiked = !MainActivity.posts[position].IsLiked;
-        //
-        //    Intent mainActivity = new Intent(context, typeof(MainActivity));
-        //    mainActivity.SetFlags(ActivityFlags.ClearTop);
-        //    mainActivity.SetFlags(ActivityFlags.NoAnimation);
-        //    context.StartActivity(mainActivity);
-        //}
-
-        //private void CustomAdapter_Comments(int position)
-        //{
-        //    Intent commentsActivity = new Intent(context, typeof(CommentActivity));
-        //    commentsActivity.PutExtra("Comments", JsonConvert.SerializeObject(items[position].Comments));
-        //    context.StartActivity(commentsActivity);
-        //}
     }
 }

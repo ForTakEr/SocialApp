@@ -18,8 +18,6 @@ namespace App1
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            // Set our view from the "main" layout resource
-            //SetContentView(Resource.Layout.activity_main);
 
             if(posts == null) TestPosts();
 
@@ -41,8 +39,8 @@ namespace App1
 
             Comment = new Comment
             {
-                Name = "Bemmi vend",
-                Message = "Tahab audit",
+                Name = "auto24 vend",
+                Message = "Müüb audit",
                 Likes = 0
             };
             comments.Add(Comment);
@@ -91,7 +89,7 @@ namespace App1
                 Date = DateTimeOffset.FromUnixTimeSeconds(1500056855),
                 Comments = comments,
                 ContainsPic = true,
-                Pic = Resource.Drawable.haters
+                Pic = Resource.Drawable.download
             };
             posts.Add(post);
 
@@ -124,7 +122,7 @@ namespace App1
             post = new SocialPost
             {
                 Name = "Test3",
-                Message = "Message to test FACEBOOK",
+                Message = "Message to test",
                 Likes = 0,
                 Date = DateTimeOffset.FromUnixTimeSeconds(1305056855),
                 Comments = comments
@@ -136,14 +134,6 @@ namespace App1
             Comment = new Comment
             {
                 Name = "Test1. 4post",
-                Message = "Test",
-                Likes = 10
-            };
-            comments.Add(Comment);
-
-            Comment = new Comment
-            {
-                Name = "Test2. 4post",
                 Message = "Test",
                 Likes = 10
             };
@@ -165,7 +155,7 @@ namespace App1
                 Date = DateTimeOffset.FromUnixTimeSeconds(1205056005),
                 Comments = comments,
                 ContainsPic = true,
-                Pic = Resource.Drawable.Random
+                Pic = Resource.Drawable.iceberg
             };
             posts.Add(post);
         }
