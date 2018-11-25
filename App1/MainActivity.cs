@@ -15,18 +15,26 @@ namespace App1
         public static List<SocialPost> posts;
         public static List<Comment> comments;
 
+        EditText inputText;
+        Button addButton;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            if(posts == null) TestPosts();
-
+            inputText = FindViewById<EditText>(Resource.Id.content);
+            addButton = FindViewById<Button>(Resource.Id.addPost);
+            if (posts == null)
+            {
+                TestPosts();
+            }
+            //Define lists adapter
             ListAdapter = new PostAdapter(this, posts);
-            FindViewById<Button>(Resource.Id.addPost).Click += AddPostButton;
+            addButton.Click += addPostButton;
         }
 
-        private void AddPostButton(object sender, EventArgs e)
+        private void addPostButton(object sender, EventArgs e)
         {
             EditText editText = FindViewById<EditText>(Resource.Id.content);
 
@@ -47,15 +55,7 @@ namespace App1
 
             Comment Comment = new Comment
             {
-                Name = "Karupoeg",
-                Message = "Ei kannata",
-                Likes = 228
-            };
-            comments.Add(Comment);
-
-            Comment = new Comment
-            {
-                Name = "auto24 vend",
+                Name = "mingi vend",
                 Message = "Müüb audit",
                 Likes = 0
             };
@@ -64,7 +64,7 @@ namespace App1
             SocialPost post = new SocialPost
             {
                 Name = "Test1",
-                Message = "See sõnum on tekkinud siia ns",
+                Message = "Ssdg",
                 Likes = 0,
                 Date = DateTimeOffset.FromUnixTimeSeconds(1541056855),
                 Comments = comments
