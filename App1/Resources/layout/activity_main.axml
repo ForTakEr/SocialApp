@@ -28,7 +28,7 @@
                 android:inputType="text"
                 android:id="@+id/content" />
             <Button
-                android:text="Lisa postitus"
+                android:text="Add post"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/addPost" />

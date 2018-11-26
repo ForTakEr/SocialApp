@@ -29,7 +29,6 @@ namespace App1
             {
                 TestPosts();
             }
-            //Define lists adapter
             ListAdapter = new PostAdapter(this, posts);
             addButton.Click += addPostButton;
         }
@@ -75,25 +74,9 @@ namespace App1
 
             Comment = new Comment
             {
-                Name = "Test1. 2post",
+                Name = "45. 2post",
                 Message = "Test",
                 Likes = 3
-            };
-            comments.Add(Comment);
-
-            Comment = new Comment
-            {
-                Name = "Test2. 2post",
-                Message = "Test",
-                Likes = 5
-            };
-            comments.Add(Comment);
-
-            Comment = new Comment
-            {
-                Name = "Test3. 2post",
-                Message = "Test",
-                Likes = 9
             };
             comments.Add(Comment);
 
@@ -165,10 +148,10 @@ namespace App1
 
             post = new SocialPost
             {
-                Name = "Test4",
-                Message = "See sonum on tekkinud siia ns",
+                Name = "op",
+                Message = "1112",
                 Likes = 0,
-                Date = DateTimeOffset.FromUnixTimeSeconds(1205056005),
+                Date = DateTimeOffset.FromUnixTimeSeconds(03215161884),
                 Comments = comments,
                 ContainsPic = true,
                 Pic = Resource.Drawable.iceberg
