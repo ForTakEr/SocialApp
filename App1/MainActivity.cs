@@ -55,8 +55,8 @@ namespace App1
 
             Comment Comment = new Comment
             {
-                Name = "mingi vend",
-                Message = "Müüb audit",
+                Name = "proov",
+                Message = "asd",
                 Likes = 0
             };
             comments.Add(Comment);
@@ -162,18 +162,6 @@ namespace App1
                 Likes = 10
             };
             comments.Add(Comment);
-
-            post = new SocialPost
-            {
-                Name = "Test4",
-                Message = "See sonum on tekkinud siia ns",
-                Likes = 0,
-                Date = DateTimeOffset.FromUnixTimeSeconds(1205056005),
-                Comments = comments,
-                ContainsPic = true,
-                Pic = Resource.Drawable.iceberg
-            };
-            posts.Add(post);
         }
     }
 }
